@@ -112,6 +112,19 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'oracle' => [
+            'driver'        => 'oracle',
+            'tns'           => env('DB_ORACLE_TNS', ''),
+            'host'          => env('DB_ORACLE_HOST', '192.168.10.16'),
+            'port'          => env('DB_ORACLE_PORT', '1523'),
+            'database'      => env('DB_ORACLE_DATABASE', ''),
+            'username'      => env('DB_ORACLE_USERNAME', ''),
+            'password'      => env('DB_ORACLE_PASSWORD', ''),
+            'charset'       => env('DB_ORACLE_CHARSET', 'AL32UTF8'),
+            'prefix'        => env('DB_ORACLE_SCHEMA_PREFIX', ''),
+            'prefix_schema' => env('DB_ORACLE_SCHEMA_PREFIX', ''),
+        ],
+
     ],
 
     /*

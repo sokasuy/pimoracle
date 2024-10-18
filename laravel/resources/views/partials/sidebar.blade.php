@@ -192,6 +192,7 @@
 @endif --}}
 
                 @if (Permission::where('role', Auth::user()->role)->where('menu_group', 'authentication')->where('read', true)->exists())
+                    {{-- @if ($hasReadPermission) --}}
                     <li
                         class="nav-item {{ Request::is('authentication*') || Request::is('roles*') || Request::is('permission*') ? 'menu-open' : '' }}">
                         <a href="#"

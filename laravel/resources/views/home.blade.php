@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main', ['hasReadPermission' => $hasReadPermission])
 
 @section('title')
     <title>{{ Config::get('app.name') }} | Dashboard</title>
