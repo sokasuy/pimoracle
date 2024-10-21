@@ -19,6 +19,10 @@
         href="{{ asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
@@ -382,6 +386,22 @@
     <script src="{{ asset('assets/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
     <!-- jQuery Knob Chart -->
     <script src="{{ asset('assets/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    {{-- <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-2.1.8/datatables.min.js"></script> --}}
+    <script src="{{ asset('assets/plugins/datatables/datetime.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Select2 -->
     <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- daterangepicker -->

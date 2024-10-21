@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     //DASHBOARD
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/', [HomeController::class, 'index'])->name('dashboard.home');
+    Route::post('/authentication/users/get-worklist', [HomeController::class, 'getWorklist'])->name('home.getworklist');
 
     //PROFILE
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
