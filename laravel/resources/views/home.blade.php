@@ -102,9 +102,6 @@
 
 @section('jsbawah')
     <script defer>
-        // var hasUpdateUsers = @json($hasUpdateUsers);
-        // var hasDeleteUsers = @json($hasDeleteUsers);
-
         document.addEventListener('DOMContentLoaded', (event) => {
             var tblUser = $("#tbl_worklist").DataTable({
                 "dom": 'Bfrtip',
@@ -120,7 +117,8 @@
                     "url": '{{ route('home.getworklist') }}',
                     "type": "POST",
                     "data": {
-                        _token: "{{ csrf_token() }}"
+                        _token: "{{ csrf_token() }}",
+                        employee_id: 97
                     },
                     "xhrFields": {
                         withCredentials: true
