@@ -47,6 +47,7 @@
                                     <th>FROM</th>
                                     <th>TYPE</th>
                                     <th>SUBJECT</th>
+                                    <th>DUE</th>
                                 </tr>
                             </thead>
                             {{-- <div class="modal container fade" id="containermodal" tabindex="-1" role="basic"
@@ -125,49 +126,16 @@
                     }
                 },
                 "columns": [{
-                    "data": "name"
+                    "data": "from_user"
                 }, {
-                    "data": "email"
+                    "data": "type_trx"
                 }, {
-                    "data": "role"
+                    "data": "subject"
                 }, {
-                    "data": "created_at",
+                    "data": "due_date",
                     render: $.fn.dataTable.render.moment('YYYY-MM-DDTHH:mm:ss.SSSSZ',
                         'D MMM YYYY HH:mm:ss')
-                }, {
-                    "data": "updated_at",
-                    render: $.fn.dataTable.render.moment('YYYY-MM-DDTHH:mm:ss.SSSSZ',
-                        'D MMM YYYY HH:mm:ss')
-                }, {
-                    "data": null,
-                    render: function(data, type, row) {
-                        var button_update = "";
-                        var button_delete = "";
-
-                        if (hasUpdateUsers) {
-                            button_update =
-                                '<a class="btn_changepassword btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_container"><i class="fas fa-user-edit">&nbsp Change Password</i></a>';
-                        } else {
-                            button_update = '';
-                        }
-                        if (hasDeleteUsers) {
-                            button_delete =
-                                '<a class="btn_delete btn btn-danger btn-sm" data-toggle="modal" href="#containermodal"><i class="fas fa-trash-alt">&nbsp Delete</i></a>';
-                        } else {
-                            button_delete = '';
-                        }
-
-                        return button_update + button_delete;
-                    }
-                    // render: function(data, type, row) {
-                    //     return '<a class="btn_changepassword btn btn-primary btn-sm" data-toggle="modal" href="#editusermodal"><i class="fas fa-user-edit">&nbsp Edit</i></a> <a class="btn btn-danger btn-sm" data-toggle="modal" href="#deleteusermodal"><i class="fas fa-trash-alt">&nbsp Delete</i></a>';
-                    // }
-                    // "defaultContent": '<input type="button" class="btn_changepassword" value="Ganti Password"/><input type="button" class="btn_delete" value="Delete"/>'
                 }],
-                order: {
-                    name: 'id',
-                    dir: 'desc'
-                },
                 lengthMenu: [10, 25, 50, {
                     label: 'All',
                     value: -1

@@ -26,5 +26,7 @@ class HomeController extends Controller
     public function getWorklist(Request $request)
     {
         $employeeId = $request->get('employee_id');
+        $data= wf_notification::getWorklistNotifications($employeeId);
+        return view('home', compact('data'));
     }
 }
