@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -30,6 +31,20 @@ class UserController extends Controller
         return view('auth.users', compact('hasCreateNewUsers','hasUpdateUsers','hasDeleteUsers'));
         // return view('auth.users', ['hasUpdateUsers' => $hasUpdateUsers], ['hasDeleteUsers' => $hasDeleteUsers]);
         // return view('auth.users');
+    }
+
+    public function loginOracle(Request $request)
+    {
+        // DB::select("exec UPDATE_SKKI_REV(:year, :unit)", array ('year' => 1997, 'unit' => 'yourunit'))
+// dd($request->get('password'));
+        $login = DB::connection('oracle')
+                ->table('dual')
+                ->selectRaw("fnd_web_sec.validate_login(?, ?) as hasil", array($request->get('email'), $request->get('password')))
+                ->value('hasil');
+        dd($login);
+        // return view('home');
+        // return route('dashboard.home');
+        // return view('auth.adduser');
     }
 
     public function getUsersList(Request $request)
