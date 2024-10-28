@@ -133,19 +133,18 @@
                     "data": "subject"
                 }, {
                     "data": "due_date",
-                    render: $.fn.dataTable.render.moment('YYYY-MM-DDTHH:mm:ss.SSSSZ',
-                        'D MMM YYYY HH:mm:ss')
+                    // render: $.fn.dataTable.render.moment('YYYY-MM-DDTHH:mm:ss.SSSSZ',
+                    //     'D MMM YYYY HH:mm:ss')
                 }],
+                order: {
+                    name: 'due_date',
+                    dir: 'desc'
+                },
                 lengthMenu: [10, 25, 50, {
                     label: 'All',
                     value: -1
                 }],
                 select: true,
-                // fnInitComplete: function(oSettings, json) {
-                //     //CHANGE PASSWORD BUTTON
-                //     const btnChangePassword = document.querySelector('.btn_changepassword');
-                //     btnChangePassword.addEventListener('click', changePassword);
-                // },
                 "buttons": ['pageLength', "copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#tbl_user_wrapper .col-md-6:eq(0)');
         });

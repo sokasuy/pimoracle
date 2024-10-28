@@ -19,7 +19,7 @@ class wf_notification extends Model
                 ->join('WF_ITEM_TYPES_TL witl', 'wn.MESSAGE_TYPE', '=', 'witl.name')
                 ->join('FND_USER fu', 'wn.RECIPIENT_ROLE', '=', 'fu.USER_NAME')
                 ->join('per_all_people_f paf2', 'fu.employee_id', '=', 'paf2.PERSON_ID')
-                ->select('wn.notification_id','wn.FROM_USER','witl.display_name TYPE_TRX','wn.subject','wn.due_date','fu.USER_NAME','paf2.PERSON_ID APPROVER_PERSONID','PAF2.FULL_NAME APPROVER_FULLNAME','wn.begin_date','WN.STATUS','WN.MESSAGE_NAME')
+                ->select('wn.notification_id','wn.FROM_USER','witl.display_name as type_trx','wn.subject','wn.due_date','fu.USER_NAME','paf2.PERSON_ID as APPROVER_PERSONID','PAF2.FULL_NAME as APPROVER_FULLNAME','wn.begin_date','WN.STATUS','WN.MESSAGE_NAME')
                 ->where('WN.STATUS', '<>', 'CLOSED')
                 ->whereRaw('(SYSDATE BETWEEN paf2.effective_start_date AND paf2.effective_end_date)')
                 ->where('paf2.PERSON_ID',$employeeID)

@@ -27,6 +27,14 @@ class HomeController extends Controller
     {
         $employeeId = $request->get('employee_id');
         $data= wf_notification::getWorklistNotifications($employeeId);
-        return view('home', compact('data'));
+        // dd($data);
+        // $hasReadPermission = Permission::checkPermission(Auth::user()->role, 'dashboard', 'home', 'home', 'read');
+        return response()->json(
+            array(
+                'status' => 'ok',
+                'data' => $data
+            ),
+            200
+        );
     }
 }
