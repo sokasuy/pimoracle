@@ -25,8 +25,8 @@ class HomeController extends Controller
 
     public function getWorklist(Request $request)
     {
-        $employeeId = $request->get('employee_id');
-        $data= wf_notification::getWorklistNotifications($employeeId);
+        //$employeeId = $request->get('employee_id');
+        $data= wf_notification::getWorklistNotifications(Auth::user()->employeeid);
         // dd($data);
         // $hasReadPermission = Permission::checkPermission(Auth::user()->role, 'dashboard', 'home', 'home', 'read');
         return response()->json(
